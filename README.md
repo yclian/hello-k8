@@ -23,10 +23,14 @@
     $ kubectl expose deployment hello-http --type=NodePort
     $ kubectl get services
     ...
-    $ minikube service hello-http
+    $ curl $(minikube service hello-k8s --url)
     $ kubectl scale --replicas=3 deployment/hello-http
     $ kubectl get deployment
     $ kubectl get pods
+
+## Do the same with YAML
+
+    $ kubectl create -f hello.yml
 
 ## Good to know
 
