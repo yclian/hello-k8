@@ -41,3 +41,5 @@
 
  - [Hello Minikube Tutorial](https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/#create-a-docker-container-image)
  - [Romin Irani's Tutorial](https://rominirani.com/tutorial-getting-started-with-kubernetes-on-your-windows-laptop-with-minikube-3269b54a226)
+ - [Jenkins on K8s](https://www.blazemeter.com/blog/how-to-setup-scalable-jenkins-on-top-of-a-kubernetes-cluster)
+ 
