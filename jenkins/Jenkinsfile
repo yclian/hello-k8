@@ -1,0 +1,15 @@
+node {
+    
+  stage ('Inspections') {
+
+    sh('env > env.txt')
+    sh('cat env.txt')
+
+    sh('kubectl get secret foobar -o yaml -n jenkins')
+
+    def username = sh(script:"kubectl get secret foobar -n jenkins -o=jsonpath='{.data.username}' | base64 -d", returnStdout: true)
+    def password = sh(script:"kubectl get secret foobar -n jenkins -o=jsonpath='{.data.password}' | base64 -d", returnStdout: true)
+
+    echo "Secret: ${username} / ${password}"
+  }
+}

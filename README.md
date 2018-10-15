@@ -1,6 +1,6 @@
 # README / Walkthrough
 
-## Getting started
+## First Time!
 
     $ minikube delete
     $ minikube start --alsologtostderr
@@ -17,6 +17,12 @@
     $ kubectl get nodes
 
 ## Do something
+
+Like, [running an example job](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/#running-an-example-job):
+
+    $ kubectl create -f https://k8s.io/examples/controllers/job.yaml
+
+Or [running Nginx](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/#docker-run):
 
     $ kubectl run hello-http --image=nginx --port=80
     $ kubectl get pods

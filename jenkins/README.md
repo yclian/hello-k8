@@ -15,7 +15,7 @@ $ helm repo list
 $ helm repo add coreos https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
 $ helm install coreos/prometheus-operator --wait --name prometheus-operator --namespace monitoring
 $ helm install coreos/kube-prometheus --wait --name kube-prometheus --namespace monitoring
-$ helm install stable/jenkins --namespace jenkins --name jenkins -f ./jenkins-values.yaml
+$ helm install stable/jenkins --namespace jenkins --name jenkins -f ./values.yaml
 $ kubectl create -f rbac.yml
 $ kubectl get deployments,pods -n jenkins
 $ kubectl get services -n jenkins
@@ -30,6 +30,19 @@ The deployment earlier jas installed Prometheus to the cluster. In order to acce
 ```bash
 $ kubectl patch service kube-prometheus-grafana --namespace=monitoring --type='json' -p='[{"op": "replace",  "path": "/spec/type", "value":"NodePort"}]'
 ```
+## Running Jenkins
+
+To test whether Jenkins is properly set up:
+
+```bash
+$ kubectl create -f secret.yml -n jenkins
+```
+
+Then, run create a job using `./Jenkinsfile`.
+
+## Upgrading Jenkins
+
+TODO
 
 ## References
 
