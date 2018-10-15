@@ -3,7 +3,7 @@
 ## Getting started
 
     $ minikube delete
-    $ minikube start --kubernetes-version=v1.8.0 --vm-driver=virtualbox --alsologtostderr
+    $ minikube start --alsologtostderr
     ...
     Kubectl is now configured to use the cluster.
     Loading cached images from config file.
@@ -32,6 +32,10 @@
 
     $ kubectl create -f hello.yml
 
+## Do more: Deploy Jenkins
+
+See [`jenkins/README.md`](jenkins/README.md).
+
 ## Good to know
 
  - Pods are a model of the pattern of multiple cooperating processes which form a cohesive unit of service. They simplify application deployment and management by providing a higher-level abstraction than the set of their constituent applications.
@@ -42,3 +46,5 @@
  - [Hello Minikube Tutorial](https://kubernetes.io/docs/tutorials/stateless-application/hello-minikube/#create-a-docker-container-image)
  - [Romin Irani's Tutorial](https://rominirani.com/tutorial-getting-started-with-kubernetes-on-your-windows-laptop-with-minikube-3269b54a226)
  - [Bitnami: Deploy, scale and upgrade with Helm](https://docs.bitnami.com/kubernetes/how-to/deploy-application-kubernetes-helm/)
+ - [](https://kubernetes.io/blog/2018/04/30/zero-downtime-deployment-kubernetes-jenkins/)
+ - [](https://www.digitalocean.com/community/tutorials/modernizing-applications-for-kubernetes)
