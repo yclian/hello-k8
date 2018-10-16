@@ -1,0 +1,8 @@
+node {
+
+    label 'kube-pods'
+    git "https://github.com/google/guava.git"
+    withMaven() {
+       sh "mvn clean install"
+    }
+}

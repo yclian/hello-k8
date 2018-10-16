@@ -3,12 +3,14 @@ Master:
   Image: "jenkinsci/jenkins"
   ImageTag: "lts"
   UseSecurity: false
-  Master.resources: {requests: {cpu: 50m, memory: 512Mi}, limits: {cpu: 2000m, memory: 2048Mi}}
+  Master.resources: {requests: {cpu: 500m, memory: 1024Mi}, limits: {cpu: 2000m, memory: 2048Mi}}
   ServiceType: NodePort
   NodePort: 31111
 
   InstallPlugins:
-    - kubernetes:1.12.0
+    - job-restrictions:0.8
+    - kubernetes:1.12.7
+    - pipeline-maven:3.5.14
     - workflow-aggregator:2.5
     - workflow-job:2.23
     - git:3.9.1
@@ -16,8 +18,8 @@ Master:
 Agent:
   Enabled: true
 
-  Image: radumatei/jenkins-slave-docker
-  ImageTag: kubectl
+  Image: cloudbees/jnlp-slave-with-java-build-tools
+  ImageTag: latest
   volumes:
     - type: HostPath
       hostPath: /var/run/docker.sock
